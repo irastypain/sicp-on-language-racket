@@ -80,3 +80,5 @@
 (+ 2 (if (> b a) b a))
 ; => 6
 ```
+
+[Код](../../src/chapter01/exercise_1_01.rkt)
