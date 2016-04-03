@@ -1,7 +1,8 @@
 # Структура и интерпретация компьютерных программ
----
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/irastypain/sicp-on-language-racket/blob/master/LICENSE)
+
 ![Alt text](images/common/cover-sicp.gif "Структура и интерпретация компьютерных программ")
----
+
 ## Содержание
 
 * [Глава 1. Построение абстракций с помощью процедур](doc/chapter01/index.md)
