@@ -81,4 +81,4 @@
 ; => 6
 ```
 
-[Код](../../src/chapter01/exercise_1_01.rkt)
+[[Код](../../src/chapter01/exercise_1_01.rkt)]
