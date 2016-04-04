@@ -27,3 +27,8 @@
       (else 25))
 
 (+ 2 (if (> b a) b a))
+
+(* (cond ((> a b) a)
+         ((< a b) b)
+         (else -1))
+   (+ a 1))
