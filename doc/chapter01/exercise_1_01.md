@@ -35,6 +35,11 @@
       (else 25))
 
 (+ 2 (if (> b a) b a))
+
+(* (cond ((> a b) a)
+         ((< a b) b)
+         (else -1))
+   (+ a 1))
 ```
 
 ### Решение
@@ -79,6 +84,13 @@
 
 (+ 2 (if (> b a) b a))
 ; => 6
+
+(* (cond ((> a b) a)
+         ((< a b) b)
+         (else -1))
+   (+ a 1))
+; => 16
 ```
 
-[[Код](../../src/chapter01/exercise_1_01.rkt)]
+[Код](../../src/chapter01/exercise_1_01.rkt) |
+---|
