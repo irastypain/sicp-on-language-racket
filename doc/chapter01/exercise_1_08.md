@@ -13,3 +13,6 @@
 кубического корня.)
 
 ### Решение
+
+[Код](../../src/chapter01/exercise_1_08.rkt) | [Тест](../../test/chapter01/test_exercise_1_08.rkt)
+--- | ---
