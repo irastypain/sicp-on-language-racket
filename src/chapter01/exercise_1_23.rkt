@@ -1,6 +1,6 @@
 #lang racket
 
-(require rackunit "../lib/better-prime.rkt")
+(require "../lib/better-prime.rkt")
 
 ; Набор процедур для проверки числа на простоту.
 ; В случае, если число простое, выводится время работы процедуры
