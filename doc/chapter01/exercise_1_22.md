@@ -59,24 +59,24 @@ _√n_ данные для `100 000` и `1 000 000`? Совместим ли В�
 
 ```racket
 (search-for-primes 10000000000 3)
-Number 10000000019 is simple. Time compute: 4.508056640625ms.
-Number 10000000033 is simple. Time compute: 4.125ms.
-Number 10000000061 is simple. Time compute: 3.9130859375ms.
+Number 10000000019 is simple. Time compute: 3.755126953125ms.
+Number 10000000033 is simple. Time compute: 4.160888671875ms.
+Number 10000000061 is simple. Time compute: 4.18603515625ms.
 
 (search-for-primes 100000000000 3)
-Number 100000000003 is simple. Time compute: 12.677001953125ms.
-Number 100000000019 is simple. Time compute: 12.57080078125ms.
-Number 100000000057 is simple. Time compute: 13.096923828125ms.
+Number 100000000003 is simple. Time compute: 12.697998046875ms.
+Number 100000000019 is simple. Time compute: 12.589111328125ms.
+Number 100000000057 is simple. Time compute: 12.364990234375ms.
 
 (search-for-primes 1000000000000 3)
-Number 1000000000039 is simple. Time compute: 42.949951171875ms.
-Number 1000000000061 is simple. Time compute: 52.845947265625ms.
-Number 1000000000063 is simple. Time compute: 39.784912109375ms.
+Number 1000000000039 is simple. Time compute: 40.683837890625ms.
+Number 1000000000061 is simple. Time compute: 44.906982421875ms.
+Number 1000000000063 is simple. Time compute: 59.60986328125ms.
 
 (search-for-primes 10000000000000 3)
-Number 10000000000037 is simple. Time compute: 129.878173828125ms.
-Number 10000000000051 is simple. Time compute: 130.872802734375ms.
-Number 10000000000099 is simple. Time compute: 142.217041015625ms.
+Number 10000000000037 is simple. Time compute: 133.6240234375ms.
+Number 10000000000051 is simple. Time compute: 168.553955078125ms.
+Number 10000000000099 is simple. Time compute: 124.240966796875ms.
 ```
 
 По выводу результатов работы программы можно подтвердить ожидание того, что для
