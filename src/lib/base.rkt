@@ -16,3 +16,9 @@
      (square y)))
 ; Экспорт процедуры
 (provide sum-of-squares)
+
+; Процедура, проверяющая целочисленную делимость числа 'a' на число `b`
+(define (divides? a b)
+    (= (remainder b a) 0))
+; Экспорт процедуры
+(provide divides?)
