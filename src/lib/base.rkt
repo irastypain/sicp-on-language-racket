@@ -46,3 +46,9 @@
   (/ (+ a b) 2))
 ; Экспорт процедуры
 (provide average)
+
+; Процедура получения среднего между `x` и `f(x)`
+(define (average-damp f)
+  (lambda (x) (average x (f x))))
+; Экспорт процедуры
+(provide average-damp)
