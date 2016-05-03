@@ -52,3 +52,9 @@
   (lambda (x) (average x (f x))))
 ; Экспорт процедуры
 (provide average-damp)
+
+; Процедура вычисления двоичного логарифма
+(define (log2 x)
+  (/ (log x) (log 2)))
+; Экспорт процедуры
+(provide log2)
