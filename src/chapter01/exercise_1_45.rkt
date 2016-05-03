@@ -1,7 +1,6 @@
 #lang racket
 
 (require "../lib/base.rkt"
-         "../lib/const.rkt"
          "../lib/fast-expt.rkt"
          "../lib/fixed-point.rkt"
          "../lib/repeated.rkt")
