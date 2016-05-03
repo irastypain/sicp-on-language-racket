@@ -13,7 +13,7 @@
 (define (rectangle-width rectangle)
   (car (cdr rectangle)))
 
-; Получение высоты
+; Получение ширины
 (define (rectangle-height rectangle)
   (cdr (cdr rectangle)))
 

@@ -20,7 +20,7 @@
   (abs (- (x-point (rectangle-left-bottom rectangle))
           (x-point (rectangle-right-top rectangle)))))
 
-; Вычисление высоты прямоугольника
+; Вычисление ширины прямоугольника
 (define (rectangle-height rectangle)
   (abs (- (y-point (rectangle-left-bottom rectangle))
           (y-point (rectangle-right-top rectangle)))))
