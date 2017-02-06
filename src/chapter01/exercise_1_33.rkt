@@ -8,9 +8,10 @@
   (define (iter a acc)
     (if (> a b)
         acc
-        (if (filter a)
-            (iter (next a) (combiner (term a) acc))
-            (iter (next a) (combiner null-value acc)))))
+        (iter (next a) (combiner (if (filter a)
+                                     (term a)
+                                     null-value)
+                                 acc))))
   (iter a null-value))
 
 ; Процедура вычисления суммы квадратов
