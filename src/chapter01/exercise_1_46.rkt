@@ -27,5 +27,5 @@
                       (lambda (guess)
                         (average guess (/ x guess)))) 1.0))
 
-; Экспорт процедуры
+; Экспорт процедур
 (provide improve-sqrt improve-fixed-point)

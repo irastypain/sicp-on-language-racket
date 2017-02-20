@@ -3,9 +3,6 @@
 (require "../lib/base.rkt")
 
 ; Набор процедур для вычисления квадратного корня методом Ньютона
-(define (average x y)
-  (/ (+ x y) 2))
-
 (define (improve guess x)
   (average guess (/ x guess)))
 

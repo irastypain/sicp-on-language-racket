@@ -1,6 +1,7 @@
 #lang racket
 
 (require rackunit
+         "../../src/lib/const.rkt"
          "../../src/lib/base.rkt"
          "../../src/chapter01/exercise_1_07.rkt")
 
@@ -11,7 +12,7 @@
 (check-equal? (square (sqrt 1000)) 1000.000369924366 (printf "test-from-book#4 1.7 passed\n"))
 
 ; Тесты для улучшенной процедуры
-(check-equal? (better-sqrt 9) 3.0 (printf "test#1 1.7 passed\n"))
-(check-equal? (better-sqrt 0.09) 0.3 (printf "test#2 1.7 passed\n"))
-(check-equal? (square (better-sqrt 1000)) 1000.0 (printf "test#3 1.7 passed\n"))
-(check-equal? (better-sqrt (+ (better-sqrt 9) (better-sqrt 4))) 2.23606797749979 (printf "test#4 1.7 passed\n"))
+(check-= (better-sqrt 9) 3.0 tolerance (printf "test#1 1.7 passed\n"))
+(check-= (better-sqrt 0.09) 0.3 tolerance (printf "test#2 1.7 passed\n"))
+(check-= (square (better-sqrt 1000)) 1000.0 tolerance (printf "test#3 1.7 passed\n"))
+(check-= (better-sqrt (+ (better-sqrt 9) (better-sqrt 4))) 2.23606797749979 tolerance (printf "test#4 1.7 passed\n"))

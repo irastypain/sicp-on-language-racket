@@ -1,6 +1,7 @@
 #lang racket
 
 (require rackunit
+         "../../src/lib/const.rkt"
          "../../src/chapter01/exercise_1_37i.rkt"
          "../../src/lib/count-iterations.rkt")
 
@@ -10,6 +11,6 @@
                               k))))
 
 (define iterations
-  (count-iterations goldenRatio 1.61803 0.00001))
+  (count-iterations goldenRatio 1.61803 tolerance))
 
-(check-= (goldenRatio iterations) 1.61803 0.00001 (printf "test#1 1.37i passed\n"))
+(check-= (goldenRatio iterations) 1.61803 tolerance (printf "test#1 1.37i passed\n"))
