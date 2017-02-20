@@ -7,27 +7,25 @@
 ; в случае, если текущение значение процедуры не удовлетворяет
 ; условию, иначе текущее значение)
 (define (iterative-improve good-enough? improve)
-  (define (iteration guess)
-    (let ((next (improve guess)))
-      (if (good-enough? guess next)
-          next
-          (iteration next))))
-  iteration)
+  (lambda (guess)
+    (if (good-enough? guess)
+        guess
+        ((iterative-improve good-enough? improve) (improve guess)))))
 
 ; Улучшенная версия процедуры `fixed-point`
-(define (fixed-point f first-guess)
-  ((iterative-improve (lambda (guess next)
-                        (< (abs (- guess next))
+(define (improve-fixed-point f first-guess)
+  ((iterative-improve (lambda (guess)
+                        (< (abs (- guess (f guess)))
                            tolerance))
                       f) first-guess))
 
 ; Улучшенная версия процедуры `sqrt`
-(define (sqrt x)
-  ((iterative-improve (lambda (guess next)
+(define (improve-sqrt x)
+  ((iterative-improve (lambda (guess)
                         (< (abs (- (square guess) x))
                            tolerance))
                       (lambda (guess)
                         (average guess (/ x guess)))) 1.0))
 
 ; Экспорт процедуры
-(provide sqrt)
+(provide improve-sqrt improve-fixed-point)
