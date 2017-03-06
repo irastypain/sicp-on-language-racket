@@ -1,7 +1,7 @@
 #lang racket
 
 (require rackunit
-         "../../src/lib/interval-arifmetic.rkt")
+         "../../src/lib/interval-arithmetic.rkt")
 
 (define ab (make-interval 1 3))
 (define cd (make-interval 2 5))
