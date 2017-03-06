@@ -34,9 +34,11 @@
 
 ; Деление интервалов
 (define (div-interval x y)
-  (mul-interval x
-                (make-interval (/ 1.0 (upper-bound y))
-                               (/ 1.0 (lower-bound y)))))
+  (let ((upper (upper-bound y))
+        (lower (lower-bound y)))
+    (if (> (* upper lower) 0)
+        (mul-interval x (make-interval (/ 1.0 upper) (/ 1.0 lower)))
+        (error "Интервал, на который производится деление, пересекает 0:" y))))
 
 ; Радиус интервалов
 (define (radius-interval interval)
