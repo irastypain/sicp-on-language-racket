@@ -25,12 +25,36 @@
 
 ; Умножение интервалов
 (define (mul-interval x y)
-  (let ((p1 (* (lower-bound x) (lower-bound y)))
-        (p2 (* (lower-bound x) (upper-bound y)))
-        (p3 (* (upper-bound x) (lower-bound y)))
-        (p4 (* (upper-bound x) (upper-bound y))))
-    (make-interval (min p1 p2 p3 p4)
-                   (max p1 p2 p3 p4))))
+  (let ((lx (lower-bound x))
+        (ly (lower-bound y))
+        (ux (upper-bound x))
+        (uy (upper-bound y)))
+    (let ((p1 (* lx ly))
+          (p2 (* lx uy))
+          (p3 (* ux ly))
+          (p4 (* ux uy)))
+      (cond ((positive? lx)
+             (cond ((positive? ly)
+                    (make-interval p1 p4))
+                   ((negative? uy)
+                    (make-interval p3 p2))
+                   (else
+                    (make-interval p3 p4))))
+            ((negative? ux)
+             (cond ((positive? ly)
+                    (make-interval p2 p3))
+                   ((negative? uy)
+                    (make-interval p4 p1))
+                   (else
+                    (make-interval p2 p1))))
+            (else
+             (cond ((positive? ly)
+                    (make-interval p2 p4))
+                   ((negative? uy)
+                    (make-interval p3 p1))
+                   (else
+                    (make-interval (min p1 p2 p3 p4)
+                                   (max p1 p2 p3 p4)))))))))
 
 ; Деление интервалов
 (define (div-interval x y)
