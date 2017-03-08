@@ -1,6 +1,7 @@
 #lang racket
 
 (require rackunit
+         "../../src/chapter02/exercise_2_09.rkt"
          "../../src/lib/interval-arithmetic.rkt")
 
 (define ab (make-interval 1 3))
