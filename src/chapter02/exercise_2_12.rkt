@@ -8,8 +8,9 @@
 ; значению интервала и погрешностью в процентах
 (define (make-center-percent c p)
   (let ((percent (/ p 100)))
-    (make-center-width c (if (= c 0) percent
-                             (* (abs c) percent)))))
+    (make-center-width c
+                       (if (= c 0) percent
+                           (* (abs c) percent)))))
 
 ; Получение погрешности в процентах
 (define (percent i)
