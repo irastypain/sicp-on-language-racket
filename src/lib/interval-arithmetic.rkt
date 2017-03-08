@@ -65,9 +65,20 @@
         (error "Интервал, на который производится деление, пересекает 0:" y))))
 
 ; Радиус интервалов
-(define (radius-interval interval)
-  (/ (- (upper-bound interval)
-        (lower-bound interval))
+(define (width i)
+  (/ (- (upper-bound i)
+        (lower-bound i))
+     2))
+
+; Конструктор интервала по серединному
+; значению интервала и аддитивной погрешности
+(define (make-center-width c w)
+  (make-interval (- c w) (+ c w)))
+
+; Серединное значение интервала
+(define (center i)
+  (/ (+ (lower-bound i)
+        (upper-bound i))
      2))
 
 ; Экспорт процедур
@@ -78,4 +89,6 @@
          sub-interval
          mul-interval
          div-interval
-         radius-interval)
+         width
+         make-center-width
+         center)
