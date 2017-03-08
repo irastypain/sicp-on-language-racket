@@ -81,6 +81,17 @@
         (upper-bound i))
      2))
 
+; Конструктор интервала по серединному
+; значению интервала и погрешностью в процентах
+(define (make-center-percent c p)
+  (let ((additive-error (* c p)))
+    (make-center-width c additive-error)))
+
+; Получение погрешности в процентах
+(define (percent i)
+  (let ((c (center i)))
+    (/ c (- (upper-bound i) c))))
+
 ; Экспорт процедур
 (provide make-interval
          lower-bound
@@ -91,4 +102,6 @@
          div-interval
          width
          make-center-width
-         center)
+         center
+         make-center-percent
+         percent)
