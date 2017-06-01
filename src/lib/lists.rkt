@@ -21,7 +21,15 @@
       list2
       (cons (car list1) (append (cdr list1) list2))))
 
+; Процедура получения количества листьев в дереве
+(define (count-leaves tree)
+  (cond ((null? tree) 0)
+        ((not (pair? tree)) 1)
+        (else (+ (count-leaves (car tree))
+                 (count-leaves (cdr tree))))))
+
 ; Экспорт процедур
 (provide list-ref
          length
-         append)
+         append
+         count-leaves)
