@@ -28,8 +28,17 @@
         (else (+ (count-leaves (car tree))
                  (count-leaves (cdr tree))))))
 
+; Процедура накопления результата применения
+; некоторой операции к последовательности
+(define (accumulate op initial sequence)
+  (if (null? sequence)
+      initial
+      (op (car sequence)
+          (accumulate op initial (cdr sequence)))))
+
 ; Экспорт процедур
 (provide list-ref
          length
          append
-         count-leaves)
+         count-leaves
+         accumulate)
