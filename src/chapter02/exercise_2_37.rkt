@@ -11,7 +11,7 @@
 (define (matrix-*-vector m v)
   (map (lambda (w) (dot-product v w)) m))
 
-; Процедура транпонирования матрицы
+; Процедура транспонирования матрицы
 (define (transpose mat)
   (accumulate-n cons null mat))
 
