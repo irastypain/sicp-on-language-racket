@@ -11,5 +11,5 @@
       (cons (accumulate op init (map car seqs))
             (accumulate-n op init (map cdr seqs)))))
 
-; Экспорт процедурыы
+; Экспорт процедуры
 (provide accumulate-n)
