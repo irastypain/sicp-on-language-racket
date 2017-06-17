@@ -22,3 +22,7 @@
 (check-not-equal? (fold-left - 0 (list 1 2 3 4 5 6))
                   (fold-right - 0 (list 1 2 3 4 5 6))
                   (printf "test#5 2.38 passed\n"))
+
+(check-not-equal? (fold-left (lambda (x y) (abs (- x y))) 0 (list 1 2 3 4 5 6))
+                  (fold-right (lambda (x y) (abs (- x y))) 0 (list 1 2 3 4 5 6))
+                  (printf "test#6 2.38 passed\n"))
