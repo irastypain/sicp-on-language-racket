@@ -36,9 +36,23 @@
       (op (car sequence)
           (accumulate op initial (cdr sequence)))))
 
+; Процедура отображения передаваемой функции на последовательность,
+; которая возвращает список значений для каждого элемента 
+(define (flatmap proc seq)
+  (accumulate append null (map proc seq)))
+
+; Процедура генерации последовательности целых чисел
+; в заданном диапазоне
+(define (enumerate-interval low high)
+  (if (> low high)
+      null
+      (cons low (enumerate-interval (+ low 1) high))))
+
 ; Экспорт процедур
 (provide list-ref
          length
          append
          count-leaves
-         accumulate)
+         accumulate
+         flatmap
+         enumerate-interval)
