@@ -1,7 +1,7 @@
 #lang racket
 
 (require rackunit
-         "../../src/chapter02/exercise_2_42_b.rkt")
+         "../../src/chapter02/exercise_2_42b.rkt")
 
 (check-equal? (queens 4)
               '((3 1 4 2) (2 4 1 3))
