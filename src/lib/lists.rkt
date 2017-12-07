@@ -48,6 +48,11 @@
       null
       (cons low (enumerate-interval (+ low 1) high))))
 
+; Процедура удаления элемента из списка
+(define (remove item sequence)
+  (filter (lambda (x) (not (= x item)))
+          sequence))
+
 ; Экспорт процедур
 (provide list-ref
          length
@@ -55,4 +60,5 @@
          count-leaves
          accumulate
          flatmap
-         enumerate-interval)
+         enumerate-interval
+         remove)
