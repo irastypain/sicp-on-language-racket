@@ -37,7 +37,7 @@
           (accumulate op initial (cdr sequence)))))
 
 ; Процедура отображения передаваемой функции на последовательность,
-; которая возвращает список значений для каждого элемента 
+; которая возвращает список значений для каждого элемента
 (define (flatmap proc seq)
   (accumulate append null (map proc seq)))
 
@@ -53,6 +53,13 @@
   (filter (lambda (x) (not (= x item)))
           sequence))
 
+; Процедура отображения переданной функции
+; на список. Процедура всегда возвращает #t
+(define (for-each func items)
+  (cond ((null? items) #t)
+        (else (func (car items))
+              (for-each func (cdr items)))))
+
 ; Экспорт процедур
 (provide list-ref
          length
@@ -61,4 +68,5 @@
          accumulate
          flatmap
          enumerate-interval
-         remove)
+         remove
+         for-each)
