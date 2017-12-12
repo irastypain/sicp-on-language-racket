@@ -62,7 +62,20 @@
 
 ; Процедура добавляет painter2 к painter1 снизу
 (define (below painter1 painter2)
-  (identity))
+  (let ((split-point (make-vect 0.0 0.5)))
+    (let ((paint-top
+           (transform-painter painter2
+                              (make-vect 0.0 0.0)
+                              (make-vect 1.0 0.0)
+                              split-point))
+          (paint-bottom
+           (transform-painter painter1
+                              split-point
+                              (make-vect 1.0 0.5)
+                              (make-vect 0.0 1.0))))
+      (lambda (frame)
+        (paint-top frame)
+        (paint-bottom frame)))))
 
 ; Процедура отображает painter зеркально вертикально
 (define (flip-vert painter)
@@ -205,6 +218,7 @@
          rotate90
          rotate180
          rotate270
+         transform-painter
          split
          up-split
          right-split
