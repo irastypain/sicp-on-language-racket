@@ -33,10 +33,32 @@
                (scale-vect (ycor-vect v)
                            (edge2-frame frame))))))
 
+; Процедура трансформации painter'а
+(define (transform-painter painter origin corner1 corner2)
+  (lambda (frame)
+    (let ((m (frame-coord-map frame)))
+      (let ((new-origin (m origin)))
+        (painter
+         (make-frame new-origin
+                     (sub-vect (m corner1) new-origin)
+                     (sub-vect (m corner2) new-origin)))))))
 
 ; Процедура добавляет painter2 к painter1 справа
 (define (beside painter1 painter2)
-  (identity))
+  (let ((split-point (make-vect 0.5 0.0)))
+    (let ((paint-left
+           (transform-painter painter1
+                              (make-vect 0.0 0.0)
+                              split-point
+                              (make-vect 0.0 1.0)))
+          (paint-right
+           (transform-painter painter2
+                              split-point
+                              (make-vect 1.0 0.0)
+                              (make-vect 0.5 1.0))))
+      (lambda (frame)
+        (paint-left frame)
+        (paint-right frame)))))
 
 ; Процедура добавляет painter2 к painter1 снизу
 (define (below painter1 painter2)
@@ -44,15 +66,53 @@
 
 ; Процедура отображает painter зеркально вертикально
 (define (flip-vert painter)
-  (identity))
+  (transform-painter painter
+                     (make-vect 0.0 1.0)
+                     (make-vect 1.0 1.0)
+                     (make-vect 0.0 0.0)))
 
 ; Процедура отображает painter зеркально горизонтально
 (define (flip-horiz painter)
-  (identity))
+  (transform-painter painter
+                     (make-vect 1.0 0.0)
+                     (make-vect 0.0 0.0)
+                     (make-vect 1.0 1.0)))
+
+; Процедура рисует уменьшенную копию painter'а
+; в правой верхней четверти рамки
+(define (shrink-to-upper-right painter)
+  (transform-painter painter
+                     (make-vect 0.5 0.0)
+                     (make-vect 1.0 0.0)
+                     (make-vect 0.5 0.5)))
+
+; Процедура сжимает painter по направлению к центру рамки
+(define (squash-inwards painter)
+  (transform-painter painter
+                     (make-vect 0.0 0.0)
+                     (make-vect 0.65 0.35)
+                     (make-vect 0.35 0.65)))
+
+; Процедура поворачивает painter на 90 градусов
+(define (rotate90 painter)
+  (transform-painter painter
+                     (make-vect 1.0 0.0)
+                     (make-vect 1.0 1.0)
+                     (make-vect 0.0 0.0)))
 
 ; Процедура поворачивает painter на 180 градусов
 (define (rotate180 painter)
-  (compose flip-vert flip-horiz))
+  (transform-painter painter
+                     (make-vect 1.0 1.0)
+                     (make-vect 0.0 1.0)
+                     (make-vect 1.0 0.0)))
+
+; Процедура поворачивает painter на 270 градусов
+(define (rotate270 painter)
+  (transform-painter painter
+                     (make-vect 0.0 1.0)
+                     (make-vect 0.0 0.0)
+                     (make-vect 1.0 1.0)))
 
 ; Процедура комбинирования painter'ов, к которым применены
 ; одноаргументные операции tl, tr, bl, br, соответственно
@@ -142,16 +202,20 @@
          flip-vert
          flip-horiz
          flipped-pairs
+         rotate90
          rotate180
+         rotate270
          split
          up-split
          right-split
          corner-split
          square-of-four
          square-limit
+         shrink-to-upper-right
+         squash-inwards
+         make-frame
          frame-coord-map
          segments->painter
          draw-line
-         make-frame
          polyline
          polygon)
