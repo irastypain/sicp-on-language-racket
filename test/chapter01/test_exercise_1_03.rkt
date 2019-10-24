@@ -1,7 +1,27 @@
 #lang racket
 
-(require rackunit "../../src/chapter01/exercise_1_03.rkt")
+(require rackunit
+         rackunit/text-ui
+         "../../src/chapter01/exercise_1_03.rkt")
 
-(check-equal? (sum-of-squares-of-top-two 2 3 3) 18 (printf "test#1 1.3 passed\n"))
-(check-equal? (sum-of-squares-of-top-two 3 3 4) 25 (printf "test#2 1.3 passed\n"))
-(check-equal? (sum-of-squares-of-top-two 3 7 4) 65 (printf "test#3 1.3 passed\n"))
+(define tests
+  (test-suite
+    "Sum of squares of the greatest two numbers"
+
+    (test-case
+      "When first and second numbers are greatest"
+      (check-equal? 13 (sum-of-squares-of-greatest-two-numbers 2 3 1))
+      (check-equal? 13 (sum-of-squares-of-greatest-two-numbers 3 2 1)))
+
+    (test-case
+      "When second and third numbers are greatest"
+      (check-equal? 13 (sum-of-squares-of-greatest-two-numbers 1 2 3))
+      (check-equal? 13 (sum-of-squares-of-greatest-two-numbers 1 3 2)))
+
+    (test-case
+      "When two numbers equality"
+      (check-equal? 13 (sum-of-squares-of-greatest-two-numbers 2 2 3))
+      (check-equal? 13 (sum-of-squares-of-greatest-two-numbers 2 3 2))
+      (check-equal? 13 (sum-of-squares-of-greatest-two-numbers 3 2 2)))))
+
+(run-tests tests 'verbose)
