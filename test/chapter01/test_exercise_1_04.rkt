@@ -1,8 +1,23 @@
 #lang racket
 
-(require rackunit "../../src/chapter01/exercise_1_04.rkt")
+(require rackunit
+         rackunit/text-ui
+         "../../src/chapter01/exercise_1_04.rkt")
 
-(check-equal? (a-plus-abs-b 2 3) 5 (printf "test#1 1.4 passed\n"))
-(check-equal? (a-plus-abs-b 4 -3) 7 (printf "test#2 1.4 passed\n"))
-(check-equal? (a-plus-abs-b -3 0) -3 (printf "test#3 1.4 passed\n"))
-(check-equal? (a-plus-abs-b -3 4) 1 (printf "test#4 1.4 passed\n"))
+(define tests
+  (test-suite
+    "An operator is a compound expression"
+
+    (test-case
+      "When the second number is positive"
+      (check-equal? 5 (a-plus-abs-b 2 3)))
+
+    (test-case
+      "When the second number is zero"
+      (check-equal? 2 (a-plus-abs-b 2 0)))
+
+    (test-case
+      "When the second number is negative"
+      (check-equal? 5 (a-plus-abs-b 3 -2)))))
+
+(run-tests tests)
