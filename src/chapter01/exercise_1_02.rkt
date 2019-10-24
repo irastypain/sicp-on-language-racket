@@ -1,6 +1,6 @@
 #lang racket
 
-(define solution
+(define expression
   (/ (+ 5 4 (- 2
              (- 3
                 ( + 6
@@ -9,4 +9,4 @@
         (- 6 2)
         (- 2 7))))
 
-(provide solution)
+(provide expression)
