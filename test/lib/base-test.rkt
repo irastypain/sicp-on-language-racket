@@ -25,6 +25,10 @@
       (check-equal? 6 (average 4 8)))
 
     (test-suite
+      "Cube of number"
+      (check-equal? 27 (cube 3)))
+
+    (test-suite
       "Square of number"
       (test-case
         "When number is zero"
