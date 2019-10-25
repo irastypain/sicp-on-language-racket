@@ -7,5 +7,5 @@
 
 #### Решение
 
-[Код](../../src/chapter01/exercise_1_03.rkt) | [Тест](../../test/chapter01/test_exercise_1_03.rkt)
+[Код](../../src/chapter01/exercise_1_03.rkt) | [Тест](../../test/chapter01/exercise_1_03-test.rkt)
 --- | ---

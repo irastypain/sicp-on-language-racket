@@ -8,5 +8,5 @@
 
 #### Решение
 
-[Код](../../src/chapter01/exercise_1_02.rkt) | [Тест](../../test/chapter01/test_exercise_1_02.rkt)
+[Код](../../src/chapter01/exercise_1_02.rkt) | [Тест](../../test/chapter01/exercise_1_02-test.rkt)
 --- | ---
