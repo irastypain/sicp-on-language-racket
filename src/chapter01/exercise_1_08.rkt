@@ -1,8 +1,10 @@
 #lang racket
 
-(require "../lib/base.rkt")
+(require (only-in "../../lib/base.rkt"
+                  abs
+                  cube
+                  square))
 
-; Набор процедур для вычисления кубического корня
 (define (cbrt x)
   (define (cbrt-iter guess)
     (if (good-enough? guess)
@@ -20,5 +22,4 @@
 
   (cbrt-iter 1.0))
 
-; Экспорт процедуры
 (provide cbrt)
