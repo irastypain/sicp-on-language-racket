@@ -57,5 +57,5 @@
 - Процедура `g` вычисляет значение функции _2ⁿ_.
 - Процедура `h` вычисляет значение функции _2ʰ⁽ⁿ⁻¹⁾_.
 
-[Код](../../src/chapter01/exercise_1_10.rkt) | [Тест](../../test/chapter01/test_exercise_1_10.rkt)
+[Код](../../src/chapter01/exercise_1_10.rkt) | [Тест](../../test/chapter01/exercise_1_10-test.rkt)
 --- | ---
