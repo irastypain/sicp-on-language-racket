@@ -1,10 +1,9 @@
 #lang racket
 
-; Процедура возвращает значение элемента (i, j) треугольника Паскаля
-(define (pascal-triangle-item i j)
-  (if (or (= j 1) (= j i)) 1
-      (+ (pascal-triangle-item (- i 1) (- j 1))
-         (pascal-triangle-item (- i 1) j))))
+(define (pascal-triangle row column)
+  (if (or (= column 1) (= row column))
+    1
+    (+ (pascal-triangle (- row 1) (- column 1))
+       (pascal-triangle (- row 1) column))))
 
-; Экспорт процедуры
-(provide pascal-triangle-item)
+(provide pascal-triangle)

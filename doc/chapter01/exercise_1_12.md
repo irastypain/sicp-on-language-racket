@@ -7,7 +7,7 @@
 ```
 Треугольник Паскаля
 
-                1               
+                1
             1       1
         1       2       1
     1       3       3       1
@@ -21,5 +21,5 @@
 
 #### Решение
 
-[Код](../../src/chapter01/exercise_1_12.rkt) | [Тест](../../test/chapter01/test_exercise_1_12.rkt)
+[Код](../../src/chapter01/exercise_1_12.rkt) | [Тест](../../test/chapter01/exercise_1_12-test.rkt)
 --- | ---
