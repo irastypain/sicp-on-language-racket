@@ -49,5 +49,5 @@
     образом, порядок роста числа шагов и памяти для процедуры `sine` оценивается
     как _Θ(log(n))_.
 
-    [Код](../../src/chapter01/exercise_1_15.rkt) | [Тест](../../test/chapter01/test_exercise_1_15.rkt)
-    --- | ---
+  [Код](../../src/chapter01/exercise_1_15.rkt) | [Тест](../../test/chapter01/exercise_1_15-test.rkt)
+  --- | ---
