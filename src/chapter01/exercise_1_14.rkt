@@ -1,24 +1,22 @@
 #lang racket
 
-; Набор процедур для вычисления количества вариантов размена
-; суммы монетами достоинством в 1, 5, 10, 25 и 50 единиц.
 (define (count-change amount)
   (cc amount 5))
-(define (cc amount kinds-of-coins)
+
+(define (cc amount kind-of-coins)
   (cond ((= amount 0) 1)
-        ((or (< amount 0) (= kinds-of-coins 0)) 0)
+        ((or (< amount 0) (= kind-of-coins 0)) 0)
         (else (+ (cc amount
-                    (- kinds-of-coins 1))
+                     (- kind-of-coins 1))
                  (cc (- amount
-                        (first-denomination kinds-of-coins))
-                     kinds-of-coins)))))
+                        (first-denomination kind-of-coins))
+                     kind-of-coins)))))
 
-(define (first-denomination kinds-of-coins)
-  (cond ((= kinds-of-coins 1) 1)
-        ((= kinds-of-coins 2) 5)
-        ((= kinds-of-coins 3) 10)
-        ((= kinds-of-coins 4) 25)
-        ((= kinds-of-coins 5) 50)))
+(define (first-denomination kind-of-coins)
+  (cond ((= kind-of-coins 1) 1)
+        ((= kind-of-coins 2) 5)
+        ((= kind-of-coins 3) 10)
+        ((= kind-of-coins 4) 25)
+        ((= kind-of-coins 5) 50)))
 
-; Экспорт процедуры
 (provide count-change)
