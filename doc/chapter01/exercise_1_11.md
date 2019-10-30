@@ -10,5 +10,5 @@ _f_ с помощью итеративного процесса.
 #### Решение
 Процесс | Код | Тест
 --- | --- | ---
-Рекурсивный | [Просмотр](../../src/chapter01/exercise_1_11r.rkt) | [Просмотр](../../test/chapter01/test_exercise_1_11r.rkt)
-Итеративный | [Просмотр](../../src/chapter01/exercise_1_11i.rkt) | [Просмотр](../../test/chapter01/test_exercise_1_11i.rkt)
+Рекурсивный | [Просмотр](../../src/chapter01/exercise_1_11r.rkt) | [Просмотр](../../test/chapter01/exercise_1_11r-test.rkt)
+Итеративный | [Просмотр](../../src/chapter01/exercise_1_11i.rkt) | [Просмотр](../../test/chapter01/exercise_1_11i-test.rkt)
