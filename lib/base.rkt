@@ -9,6 +9,9 @@
 (define (cube x)
   (* x x x))
 
+(define (divides? a b)
+  (= (remainder b a) 0))
+
 (define (double x) (* x 2))
 
 (define (even? x)
@@ -21,6 +24,7 @@
 (provide abs
          average
          cube
+         divides?
          double
          even?
          halve

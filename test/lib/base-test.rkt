@@ -29,6 +29,14 @@
       (check-equal? 27 (cube 3)))
 
     (test-suite
+      "Does first number divide second number without a remainder?"
+      (test-case
+        "With both negative numbers"
+        (check-true (divides? -3 -3)))
+      (check-true (divides? 2 4))
+      (check-false (divides? 3 4)))
+
+    (test-suite
       "Double of number"
       (test-case
         "With negative number"
