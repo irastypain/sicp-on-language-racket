@@ -14,5 +14,5 @@
 
 #### Решение
 
-[Код](../../src/chapter01/exercise_1_16.rkt) | [Тест](../../test/chapter01/test_exercise_1_16.rkt)
+[Код](../../src/chapter01/exercise_1_16.rkt) | [Тест](../../test/chapter01/exercise_1_16-test.rkt)
 --- | ---
