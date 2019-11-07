@@ -29,6 +29,18 @@
       (check-equal? 27 (cube 3)))
 
     (test-suite
+      "Double of number"
+      (test-case
+        "With negative number"
+        (check-equal? -2 (double -1)))
+      (test-case
+        "When number is zero"
+        (check-equal? 0 (double 0)))
+      (test-case
+        "With positive number"
+        (check-equal? 2 (double 1))))
+
+    (test-suite
       "Is even number?"
       (test-case
         "When number is even"
@@ -39,6 +51,21 @@
       (test-case
         "When number is not even"
         (check-false (even? 1))))
+
+    (test-suite
+      "Halve of number"
+      (test-case
+        "With negative number"
+        (check-equal? -1 (halve -2)))
+      (test-case
+        "When number is zero"
+        (check-equal? 0 (halve 0)))
+      (test-case
+        "With positive number"
+        (check-equal? 1 (halve 2)))
+      (test-case
+        "When number is not even"
+        (check-equal? 3/2 (halve 3))))
 
     (test-suite
       "Square of number"
