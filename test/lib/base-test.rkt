@@ -29,6 +29,18 @@
       (check-equal? 27 (cube 3)))
 
     (test-suite
+      "Is even number?"
+      (test-case
+        "When number is even"
+        (check-true (even? 2)))
+      (test-case
+        "When number is zero"
+        (check-true (even? 0)))
+      (test-case
+        "When number is not even"
+        (check-false (even? 1))))
+
+    (test-suite
       "Square of number"
       (test-case
         "When number is zero"
