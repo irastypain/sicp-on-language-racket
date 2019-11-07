@@ -23,5 +23,5 @@
 
 #### Решение
 
-[Код](../../src/chapter01/exercise_1_17.rkt) | [Тест](../../test/chapter01/test_exercise_1_17.rkt)
+[Код](../../src/chapter01/exercise_1_17.rkt) | [Тест](../../test/chapter01/exercise_1_17-test.rkt)
 --- | ---
