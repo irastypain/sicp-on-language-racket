@@ -8,5 +8,5 @@
 #### Решение
 Для `199` наименьший делитель - `199`, для `1999` - `1999`, а для `19999` - `7`.
 
-[Код](../../src/chapter01/exercise_1_21.rkt) | [Тест](../../test/chapter01/test_exercise_1_21.rkt)
+[Код](../../src/chapter01/exercise_1_21.rkt) | [Тест](../../test/chapter01/exercise_1_21-test.rkt)
 --- | ---
