@@ -60,5 +60,5 @@ _`(bq' + aq' + ap', bp' + aq')`_ = _`Tp'q'(a, b)`_,
 (+ (* 2 p q) (square q))  ; q'
 ```
 
-[Код](../../src/chapter01/exercise_1_19.rkt) | [Тест](../../test/chapter01/test_exercise_1_19.rkt)
+[Код](../../src/chapter01/exercise_1_19.rkt) | [Тест](../../test/chapter01/exercise_1_19-test.rkt)
 --- | ---
