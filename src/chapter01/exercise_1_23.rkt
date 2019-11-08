@@ -1,17 +1,32 @@
 #lang racket
 
-(require "../lib/better-prime.rkt")
+(require (only-in "../../lib/base.rkt"
+                  divides?
+                  square))
 
-; Набор процедур для проверки числа на простоту.
-; В случае, если число простое, выводится время работы процедуры
-; Импортируем улучшенную версию проверки числа на простоту `prime?`
 (define (timed-prime-test number)
   (start-prime-test number (current-inexact-milliseconds)))
 
 (define (start-prime-test number start-time)
   (if (prime? number)
-      (report-prime (- (current-inexact-milliseconds) start-time) number)
-      false))
+    (report-prime (- (current-inexact-milliseconds) start-time) number)
+    false))
+
+(define (prime? n)
+  (= n (smallest-divisor n)))
+
+(define (smallest-divisor n)
+  (define (find-divisor n test-divisor)
+    (cond ((> (square test-divisor) n) n)
+          ((divides? test-divisor n) test-divisor)
+          (else (find-divisor n (next test-divisor)))))
+
+  (define (next divisor)
+    (if (= divisor 2)
+      3
+      (+ divisor 2)))
+
+  (find-divisor n 2))
 
 (define (report-prime elapsed-time number)
   (display "Number ")
@@ -21,5 +36,4 @@
   (display "ms.")
   (newline))
 
-; Экспорт процедуры
 (provide timed-prime-test)
