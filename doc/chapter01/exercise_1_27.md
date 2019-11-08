@@ -10,5 +10,5 @@
 ####  Решение
 Числа Кармайкла: 561, 1105, 1729, 2465, 2821, 6601.
 
-[Код](../../src/chapter01/exercise_1_27.rkt) | [Тест](../../test/chapter01/test_exercise_1_27.rkt)
+[Код](../../src/chapter01/exercise_1_27.rkt) | [Тест](../../test/chapter01/exercise_1_27-test.rkt)
 --- | ---
