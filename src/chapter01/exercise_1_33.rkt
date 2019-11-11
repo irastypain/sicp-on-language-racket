@@ -1,30 +1,29 @@
 #lang racket
 
-(require "../lib/base.rkt"
-         "../lib/prime.rkt")
+(require (only-in "../../lib/base.rkt"
+                  identity
+                  inc
+                  square)
+         (only-in "../../lib/prime-numbers.rkt"
+                  prime?))
 
-; Процедура фильтрования (итеративный процесс)
-(define (filtered-accumulate filter combiner null-value term a next b)
+(define (filtered-accumulate filter? combiner null-value term a next b)
   (define (iter a acc)
     (if (> a b)
-        acc
-        (iter (next a) (combiner (if (filter a)
-                                     (term a)
-                                     null-value)
-                                 acc))))
+      acc
+      (iter (next a) (combiner (if (filter? a)
+                                 (term a)
+                                 null-value)
+                               acc))))
   (iter a null-value))
 
-; Процедура вычисления суммы квадратов
-; простых чисел последовательности
 (define (sum-prime-squares a b)
   (filtered-accumulate prime? + 0 square a inc b))
 
-; Процедура вычисления произведения всех положительных чисел
-; меньше `n`, которые просты по отношению к `n`
 (define (product-prime-n n)
   (define (prime-for-n? k)
     (= (gcd k n) 1))
   (filtered-accumulate prime-for-n? * 1 identity 1 inc n))
 
-; Экспорт процедур
-(provide sum-prime-squares product-prime-n)
+(provide product-prime-n
+         sum-prime-squares)
