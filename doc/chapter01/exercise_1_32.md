@@ -25,5 +25,5 @@
 #### Решение
 Процесс | Код | Тест
 --- | --- | ---
-Рекурсивный | [Просмотр](../../src/chapter01/exercise_1_32r.rkt) | [Просмотр](../../test/chapter01/test_exercise_1_32r.rkt)
-Итеративный | [Просмотр](../../src/chapter01/exercise_1_32i.rkt) | [Просмотр](../../test/chapter01/test_exercise_1_32i.rkt)
+Рекурсивный | [Просмотр](../../src/chapter01/exercise_1_32r.rkt) | [Просмотр](../../test/chapter01/exercise_1_32r-test.rkt)
+Итеративный | [Просмотр](../../src/chapter01/exercise_1_32i.rkt) | [Просмотр](../../test/chapter01/exercise_1_32i-test.rkt)
