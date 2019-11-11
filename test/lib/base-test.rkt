@@ -76,6 +76,10 @@
         (check-equal? 3/2 (halve 3))))
 
     (test-suite
+      "Identity function"
+      (check-equal? 3 (identity 3)))
+
+    (test-suite
       "Increment number"
       (check-equal? 2 (inc 1))
       (check-equal? -1 (inc -2)))

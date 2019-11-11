@@ -19,6 +19,8 @@
 
 (define (halve x) (/ x 2))
 
+(define (identity x) x)
+
 (define (inc x) (+ x 1))
 
 (define (odd? x) (not (even? x)))
@@ -32,6 +34,7 @@
          double
          even?
          halve
+         identity
          inc
          odd?
          square)
