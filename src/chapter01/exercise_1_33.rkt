@@ -1,6 +1,7 @@
 #lang racket
 
 (require (only-in "../../lib/base.rkt"
+                  gcd
                   identity
                   inc
                   square)
