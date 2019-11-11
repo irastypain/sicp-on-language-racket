@@ -61,6 +61,11 @@
         (check-false (even? 1))))
 
     (test-suite
+      "Great common divisor"
+      (check-equal? 1 (gcd 5 7))
+      (check-equal? 3 (gcd 3 9)))
+
+    (test-suite
       "Halve of number"
       (test-case
         "With negative number"
