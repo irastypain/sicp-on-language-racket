@@ -39,5 +39,5 @@ _n_, и возвращает значение интеграла, вычисле
 Очевидно, что реализованная процедура `simpson` вычисляет интеграл гораздо
 точнее, чем `integral`.
 
-[Код](../../src/chapter01/exercise_1_29.rkt) | [Тест](../../test/chapter01/test_exercise_1_29.rkt)
+[Код](../../src/chapter01/exercise_1_29.rkt) | [Тест](../../test/chapter01/exercise_1_29-test.rkt)
 --- | ---
