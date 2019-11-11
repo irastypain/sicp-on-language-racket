@@ -76,6 +76,23 @@
         (check-equal? 3/2 (halve 3))))
 
     (test-suite
+      "Increment number"
+      (check-equal? 2 (inc 1))
+      (check-equal? -1 (inc -2)))
+
+    (test-suite
+      "Is odd number?"
+      (test-case
+        "When number is odd"
+        (check-true (odd? 1)))
+      (test-case
+        "When number is zero"
+        (check-false (odd? 0)))
+      (test-case
+        "When number is not odd"
+        (check-false (odd? 2))))
+
+    (test-suite
       "Square of number"
       (test-case
         "When number is zero"

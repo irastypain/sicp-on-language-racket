@@ -19,6 +19,10 @@
 
 (define (halve x) (/ x 2))
 
+(define (inc x) (+ x 1))
+
+(define (odd? x) (not (even? x)))
+
 (define (square x) (* x x))
 
 (provide abs
@@ -28,4 +32,6 @@
          double
          even?
          halve
+         inc
+         odd?
          square)
